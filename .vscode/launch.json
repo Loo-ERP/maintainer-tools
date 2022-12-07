@@ -1,0 +1,119 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 1 Crear Nueva rama Vacia",
+            "type": "python",
+            "request": "launch",
+            "module": "tools.create_branch",
+            "args": [
+                "16.0", 
+                "--org-name", "Loo-ERP", 
+                "--repo", "account_addons", 
+                "--repo", "account_payment_addons", 
+                "--repo", "account_report_addons", 
+                "--repo", "addons-konos", 
+                "--repo", "base_addons", 
+                "--repo", "backend_themes", 
+                "--repo", "branch_addons", 
+                "--repo", "delivery_addons",
+                "--repo", "delivery_enviame",
+                "--repo", "delivery_99_minutes",
+                "--repo", "debrand_addons",
+                "--repo", "intersport_addons",
+                "--repo", "import_addons",
+                "--repo", "l10n_cl_addons",
+                "--repo", "l10n_cl_pasarelas_pago_addons",
+                "--repo", "l10n_cl_branch_addons",
+                "--repo", "l10n_cl_centry_integration",
+                "--repo", "l10n_cl_bluexpress_addons",
+                "--repo", "l10n_cl_rrhh_addons",
+                "--repo", "multivende",
+                "--repo", "meli",
+                "--repo", "mail_addons",
+                "--repo", "mrp_addons",
+                "--repo", "repair_addons",
+                "--repo", "rrhh_addons",
+                "--repo", "sii-addons",
+                "--repo", "sale_addons", 
+                "--repo", "stock_addons", 
+                "--repo", "purchase_addons", 
+                "--repo", "product_addons", 
+                "--repo", "pos_base_addons",
+                "--repo", "pos_retail_addons",
+                "--repo", "pos_extra_addons",
+                "--repo", "pos_misc_addons",
+                "--repo", "pos_restaurant_addons",
+                "--repo", "whatsapp_addons",
+                "--repo", "web_addons",
+                "--repo", "website_addons",
+                
+                "--copier-template-vcs-ref", "loo"],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: 2 Generar README",
+            "type": "python",
+            "request": "launch",
+            "module": "tools.gen_addon_readme",
+            "args": [
+                "--org-name", "Loo-ERP", "--repo-name", "odoo_templates", "--branch", "16.0",
+                "--addons-dir", "/mnt/celm1990/Doodba/odoo16_ec/odoo/custom/src/localizacion", 
+                //"--addon-dir", "l10n_ec_extended"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: 3 Generar ChangeLOG",
+            "type": "python",
+            "request": "launch",
+            "module": "tools.oca_towncrier",
+            "args": [
+                "--org", "Loo-ERP", "--repo", "odoo_templates",
+                "--addon-dir", "/mnt/celm1990/Doodba/odoo16_ec/odoo/custom/src/localizacion/l10n_ec_delivery_note", 
+                //"--addon-dir", "l10n_ec_extended"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: 4 crear FORK",
+            "type": "python",
+            "request": "launch",
+            "module": "tools.fork_repos",
+            "args": [
+                "Loo-ERP",
+                //"--repos", "account-budgeting",
+                //"--repos", "account-closing",
+                "--default-branch", "16.0",
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: 6 Actualizar Todos los Remotos de Repositorios para YAML",
+            "type": "python",
+            "request": "launch",
+            "module": "tools.update_all_remotes",
+            "args": [
+                "Loo-ERP",
+                "--repos_yaml", "/mnt/respaldo/Doodba/doodba_odoo16_cl/odoo/custom/src/repos.yaml",
+                "--default-branch", "16.0",
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: 7 Actualizar Ultimo Commit de Repositorios para YAML",
+            "type": "python",
+            "request": "launch",
+            "module": "tools.update_last_commit",
+            "args": [
+                "Loo-ERP",
+                "--repos_yaml", "/mnt/respaldo/Doodba/doodba_odoo16_cl/odoo/custom/src/repos.yaml",
+                "--default-branch", "16.0",
+            ],
+            "justMyCode": true
+        }
+    ]
+}
