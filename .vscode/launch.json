@@ -99,7 +99,7 @@
             "module": "tools.copier_update",
             "args": [
                 "--org", "Loo-ERP", 
-                "--repos", "l10n_cl_pasarelas_pago_addons",
+                "--repos", "account_addons,base_addons,delivery_addons,delivery_enviame,delivery_99_minutes,l10n_cl_addons,l10n_cl_pasarelas_pago_addons,l10n_cl_branch_addons,l10n_cl_centry_integration,l10n_cl_bluexpress_addons,l10n_cl_rrhh_addons,multivende,meli,mail_addons,mrp_addons,repair_addons,rrhh_addons,sii-addons,sale_addons,stock_addons,purchase_addons,product_addons,pos_base_addons,pos_retail_addons,pos_extra_addons,pos_misc_addons,pos_restaurant_addons,whatsapp_addons,web_addons,website_addons",
                 "--branches", "17.0", 
                 "--git-user-name", "odoo-ci-cd", 
                 "--git-user-email", "odoo.ci.cd@gmail.com",
